@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/SwipeRefreshLayoutFeedCountry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FeedFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countriesFeedRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginVertical="10sp" />
+
+        <TextView
+            android:id="@+id/errDonwloadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cannot download countries, Please check your connection!"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <ProgressBar
+            android:id="@+id/loadingCountryRecycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>

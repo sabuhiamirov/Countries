@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="country"
+            type="com.example.kotlincountries.model.Country" />
+        <variable
+            name="listener"
+            type="com.example.kotlincountries.adapter.CountryClickListener" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_margin="10sp"
+        android:onClick="@{listener::onCounrtyClicked}" >
+
+        <TextView
+            android:id="@+id/countryUuidTXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@{String.valueOf(country.uuid)}"/>
+        <ImageView
+            android:id="@+id/countryFlagImage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:downloadUrl="@{country.countryFlagImg}"
+             />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/countryNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@{country.countryName}"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/countryRegionTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@{country.countryRegion}"
+                android:gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
